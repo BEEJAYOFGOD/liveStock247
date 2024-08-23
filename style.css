@@ -1,0 +1,116 @@
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+  align-items: center;
+  height: 65px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.logo {
+  min-width: 30%;
+
+  display: flex;
+  align-items: center;
+}
+
+.logo div img {
+  width: 80px;
+  height: auto;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  gap: 1em;
+}
+
+#slider {
+  position: relative;
+  margin-top: 0em;
+  width: 100%;
+  height: 39vw;
+}
+
+.slider-item {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-repeat: round;
+  background-size: cover;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.slider-item:nth-child(1) {
+  background-image: url(images/coe.jpg);
+}
+.slider-item:nth-child(2) {
+  background-image: url(images/home-cow.jpg);
+}
+.slider-item:nth-child(3) {
+  background-image: url(images/milk-slider.jpg);
+}
+
+.slider-item div {
+  width: 50vw;
+  height: max-content;
+  margin-left: 15em;
+}
+
+.slider-item h1 {
+  font-size: 5rem;
+  color: white;
+  margin-bottom: 0%;
+}
+
+.slider-item button {
+  border: none;
+  padding: 1em 2em;
+  color: white;
+  background: #0fa0f4;
+}
+
+.tab {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  position: absolute;
+  align-items: center;
+  bottom: 0rem;
+  height: 2vw;
+  width: 100%;
+}
+.tab div {
+  width: 2vw;
+}
+
+.tab img {
+  width: 100%;
+  fill: aliceblue;
+}
+
+.arrow-left {
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  left: 2em;
+  width: 6.5vw;
+}
+
+.arrow-left img {
+  width: 100%;
+}
+
+.arrow-right {
+  position: absolute;
+  right: 2em;
+  width: 6.5vw;
+}
+.arrow-right img {
+  width: 100%;
+}
