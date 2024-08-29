@@ -28,6 +28,10 @@ let autoplayInterval = setInterval(autoplay, 15000);
 nextBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     slide_index += 1;
+    slider_items.forEach(
+      (item) => (item.style.animation = "slide-in 0.3s ease-in-out 0s")
+    );
+    // // slider_items[slide_index].style.display = "flex";
     showSlide(slide_index);
 
     clearInterval(autoplayInterval);
@@ -39,6 +43,9 @@ prevBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     slide_index -= 1;
     showSlide(slide_index);
+    slider_items.forEach(
+      (item) => (item.style.animation = "slide-in 0.4s ease-in 0s reverse")
+    );
 
     clearInterval(autoplayInterval);
     autoplayInterval = setInterval(autoplay, 10000);
@@ -57,4 +64,16 @@ dashArray.forEach((dash) => {
     dashes[dashIndex].style.opacity = "1";
     slider_items[dashIndex].style.display = "flex";
   });
+});
+
+let scrollHeight;
+window.addEventListener("scroll", (event) => {
+  scrollHeight = this.scrollY;
+  if (scrollHeight >= 513) {
+    document.querySelector("#header").style.opacity = 1;
+    document.querySelector("#header").classList.add("scroll");
+  } else {
+    document.querySelector("#header").style.opacity = 0.9;
+    document.querySelector("#header").classList.remove("scroll");
+  }
 });
