@@ -66,14 +66,19 @@ dashArray.forEach((dash) => {
   });
 });
 
-let scrollHeight;
+let scrollHeight = 0;
+
 window.addEventListener("scroll", (event) => {
   scrollHeight = this.scrollY;
-  if (scrollHeight >= 513) {
+  if (scrollHeight >= 13) {
     document.querySelector("#header").style.opacity = 1;
     document.querySelector("#header").classList.add("scroll");
   } else {
     document.querySelector("#header").style.opacity = 0.9;
     document.querySelector("#header").classList.remove("scroll");
   }
+});
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("displaymobilenav");
 });
