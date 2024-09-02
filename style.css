@@ -186,7 +186,6 @@ button.arrow-right {
   right: 2em;
   width: 9vw;
   cursor: pointer;
-  border: 1px solid red;
 }
 
 .arrow-right img {
