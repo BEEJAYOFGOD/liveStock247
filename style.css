@@ -633,11 +633,21 @@ footer {
     max-width: 100%;
   }
   .goal {
-    padding: 2%;
+    padding: 1em;
     text-align: justify;
   }
+  .animal-health div {
+    position: absolute;
+    gap: 0;
+    top: 1em;
+  }
+  .animal-health div button {
+    margin-top: 0;
+    padding: 0.2em 0.5em;
+  }
   .animal-health div h3 {
-    font-size: 1em;
+    font-size: 1.2em;
+    margin-top: 0;
   }
   .green {
     display: none;
