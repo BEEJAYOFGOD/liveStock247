@@ -8,6 +8,12 @@
   --primary-color-dark: #0859a5;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 header#header {
   width: 100%;
   display: flex;
@@ -53,7 +59,6 @@ body {
 
 .logo {
   min-width: 30%;
-
   display: flex;
   align-items: center;
 }
@@ -108,6 +113,7 @@ a:hover::after {
   background-repeat: round;
   background-size: cover;
   align-items: center;
+  justify-content: flex-start;
   margin-bottom: 2em;
   animation: slide-in 0.7s ease-in-out both;
 }
@@ -124,9 +130,7 @@ a:hover::after {
 
 .slider-item .slider-item-content {
   width: 50vw;
-  /* height: max-content; */
-
-  margin-left: 10em;
+  margin-left: 10vw;
 }
 
 .slider-item h1 {
@@ -241,7 +245,8 @@ h2:hover::after {
 .articles article {
   display: flex;
   flex-direction: column;
-  max-width: 26%;
+  width: 100%;
+  max-width: 95%;
   border: 0.1px solid rgba(205, 201, 201, 0.216);
   border-radius: 20px;
   max-height: fit-content;
@@ -285,12 +290,13 @@ article:hover {
 .product2 article {
   display: flex;
   gap: 1em;
-  max-width: 400px;
+  width: 400px;
   border-radius: 0%;
   padding: 2em;
   justify-content: space-between;
+  flex-direction: column;
   background: var(--secondary-color);
-  transition: all 5s;
+  transition: all 0.5s;
 }
 
 .product article img,
@@ -313,13 +319,6 @@ article:hover {
   margin-top: 0%;
 }
 
-.product2 article {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 0%;
-}
-
 .product article:hover,
 .product2 article:hover {
   transform: scale(1.02);
@@ -337,6 +336,7 @@ article:hover {
   color: var(--secondary-color);
   background: var(--primary-color);
 }
+
 .goal {
   /* margin-top: 1em; */
   padding: 1em 12em;
@@ -543,22 +543,6 @@ footer {
   gap: 2em;
 }
 
-.test {
-  display: flex;
-  width: 300px;
-  border: 1px solid red;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.test img {
-  display: block;
-  /* flex-grow: 1; */
-  /* width: 100%; */
-  flex-grow: 1;
-  flex-basis: 100%;
-  border: 1px solid red;
-}
 @media (max-width: 768px) {
   nav {
     display: none;
@@ -577,11 +561,8 @@ footer {
     display: flex;
     width: 100%;
     flex-shrink: 1;
-    /* border: 1px solid red; */
     padding: 0;
     border-radius: 12px;
-    transition: height 2s;
-    border: 1px solid red;
     margin: 0;
   }
 
@@ -595,6 +576,9 @@ footer {
   #slider {
     height: 50vw;
   }
+  .slider-item {
+    display: block;
+  }
   .slider-item h1 {
     font-size: 1.8em;
     margin: 0px;
@@ -605,25 +589,149 @@ footer {
   }
 
   button.arrow-left {
-    width: 12vw;
+    width: 20vw;
+    left: 0;
   }
   button.arrow-right {
-    width: 12vw;
+    width: 20vw;
+    right: 0;
   }
 
-  div.soln {
-    padding: 0%;
+  div.soln.articles {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  div.soln.articles article {
+    width: 99%;
+  }
+  div.soln article img {
+    width: 100%;
+  }
+
+  .slider-item .slider-item-content {
+    width: 50vw;
+    margin-left: 15vw;
+  }
+  .product.articles {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+  }
+  .product.articles article {
+    max-width: 100%;
+  }
+  .product2 {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+  }
+  div.product2.articles article {
+    max-width: 100%;
+  }
+  .goal {
+    padding: 2%;
+    text-align: justify;
+  }
+  .animal-health div h3 {
+    font-size: 1em;
+  }
+  .green {
+    display: none;
+  }
+  .impact {
+    padding-bottom: 1em;
+  }
+  h2 {
+    font-size: 1.8em;
+  }
+  .white {
+    margin-top: 0%;
+    height: fit-content;
     flex-direction: column;
     width: 100%;
-    border: 1px solid red;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    gap: 2em;
+  }
+  .white article {
+    width: 80%;
+    padding-bottom: 35em;
+    max-height: 1000px;
+  }
+  .articles {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    flex: 1;
+    gap: 3em;
+    padding: 1em 3em 1em;
+  }
+  .metric-articles {
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    grid-template-rows: repeat(4, 150px);
+    gap: 1.2em;
+    justify-content: center;
+    padding: 1.5em;
+  }
+  .metric-articles article {
+    padding: 0;
+  }
+  .patner-logos {
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(4, 60px);
+    padding: 1em;
   }
 
-  .articles article {
-    border: 1px solid red;
-    width: 500pxbn;
+  .newletter-form {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    flex-wrap: wrap;
+    padding-bottom: 1em;
+    width: 85%;
   }
-  .soln.articles article {
-    width: 100%;
+
+  .newletter-form .sub {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .input-btn {
+    display: flex;
+    gap: 0em;
+    padding: 0;
+  }
+
+  .input-btn input {
+    padding: 1em;
+    border: none;
+    border-radius: 12px 0px 0px 12px;
+    outline: none;
+  }
+  .input-btn button {
+    padding: 1em 1.23em;
+    border: none;
+    border-radius: 0px 12px 12px 0px;
+    background: var(--primary-color);
+    color: white;
+  }
+
+  footer {
+    margin: 0%;
+    padding-bottom: 33em;
+  }
+
+  .footer-info {
+    flex-wrap: wrap;
   }
 }
 

@@ -3,6 +3,7 @@ let nextBtns = document.querySelectorAll(".arrow-right");
 let prevBtns = document.querySelectorAll(".arrow-left");
 let dashes = document.querySelectorAll(".dash");
 
+const navLinks = document.querySelector("nav");
 let slide_index = 0;
 
 function showSlide(nextindex) {
@@ -70,7 +71,7 @@ let scrollHeight = 0;
 
 window.addEventListener("scroll", (event) => {
   scrollHeight = this.scrollY;
-  if (scrollHeight >= 13) {
+  if (scrollHeight >= 1) {
     document.querySelector("#header").style.opacity = 1;
     document.querySelector("#header").classList.add("scroll");
   } else {
